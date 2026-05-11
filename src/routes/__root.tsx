@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Rajalingamportfolio1" },
+      { name: "description", content: "AI Vision Portfolio showcases an AI & Data Science student's projects, skills, and achievements with a modern, futuristic design." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Rajalingamportfolio1" },
+      { property: "og:description", content: "AI Vision Portfolio showcases an AI & Data Science student's projects, skills, and achievements with a modern, futuristic design." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Rajalingamportfolio1" },
+      { name: "twitter:description", content: "AI Vision Portfolio showcases an AI & Data Science student's projects, skills, and achievements with a modern, futuristic design." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d047f51c-8cb4-4cb4-b609-11d3db452fb4/id-preview-04ee9f15--5cdbe0f0-31af-488b-99b0-a2378953200c.lovable.app-1778528093513.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d047f51c-8cb4-4cb4-b609-11d3db452fb4/id-preview-04ee9f15--5cdbe0f0-31af-488b-99b0-a2378953200c.lovable.app-1778528093513.png" },
     ],
     links: [
       {
