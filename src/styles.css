@@ -134,13 +134,77 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@theme inline {
+  --color-neon: var(--neon);
+  --color-primary-glow: var(--primary-glow);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: color-mix(in oklab, white 70%, transparent);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid color-mix(in oklab, var(--neon) 12%, transparent);
+    box-shadow: 0 8px 30px -12px color-mix(in oklab, var(--neon) 25%, transparent);
+  }
+  .glass-hover {
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .glass-hover:hover {
+    border-color: color-mix(in oklab, var(--neon) 40%, transparent);
+    box-shadow: 0 18px 50px -10px color-mix(in oklab, var(--neon) 35%, transparent);
+    transform: translateY(-3px);
+  }
+  .neon-text {
+    background: linear-gradient(135deg, var(--neon), var(--primary-glow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .neon-ring {
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--neon) 25%, transparent),
+                0 0 30px -6px color-mix(in oklab, var(--neon) 45%, transparent);
+  }
+  .grid-bg {
+    background-image:
+      radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--neon) 12%, transparent), transparent 50%),
+      radial-gradient(circle at 80% 100%, color-mix(in oklab, var(--primary-glow) 10%, transparent), transparent 50%),
+      linear-gradient(to right, color-mix(in oklab, var(--neon) 5%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--neon) 5%, transparent) 1px, transparent 1px);
+    background-size: auto, auto, 60px 60px, 60px 60px;
+  }
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .wave {
+    animation: wave 1.6s ease-in-out infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(14deg); }
+    75% { transform: rotate(-8deg); }
   }
 }
